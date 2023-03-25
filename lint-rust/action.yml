@@ -17,13 +17,13 @@ on:
         type: string
 jobs:
   lint:
+  defaults:
+  run:
+    shell: bash
+    working-directory: ${{ inputs.project-directory }}
     runs-on: ubuntu-latest
     steps:
       - name: Lint with cargo fmt
         run: cargo fmt -- --check
-        shell: bash
-        working-directory: ${{ github.event.inputs.project-directory }}
       - name: Lint with cargo clippy
         run: cargo clippy -- -D warnings
-        shell: bash
-        working-directory: ${{ github.event.inputs.project-directory }}
