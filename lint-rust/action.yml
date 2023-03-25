@@ -22,8 +22,8 @@ jobs:
       - name: Lint with cargo fmt
         run: cargo fmt -- --check
         shell: bash
-        working-directory: ${{ inputs.project-directory }}
+        working-directory: ${{ github.event.inputs.project-directory }}
       - name: Lint with cargo clippy
         run: cargo clippy -- -D warnings
         shell: bash
-        working-directory: ${{ inputs.project-directory }}
+        working-directory: ${{ github.event.inputs.project-directory }}
