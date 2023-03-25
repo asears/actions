@@ -5,10 +5,10 @@ description: 'Lints a Rust project using cargo fmt and cargo clippy'
 on:
   workflow_dispatch:
     inputs:
-    project-directory:
-      description: 'The directory containing the Rust project to lint'
-      required: true
-      type: string
+      project-directory:
+        description: 'The directory containing the Rust project to lint'
+        required: true
+        type: string
   workflow_call:
     inputs:
       project-directory:
