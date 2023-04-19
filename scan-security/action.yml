@@ -19,6 +19,7 @@ on:
         default: './'
 
 runs:
+  using: composite
   scan:
     runs-on: windows-latest
     steps:
