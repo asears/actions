@@ -1,3 +1,6 @@
+name: 'Scan Security'
+description: 'Security Scan with Microsoft Security Devops'
+
 steps:
 - uses: actions/checkout@v3
 - uses: actions/setup-dotnet@v3
