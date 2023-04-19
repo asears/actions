@@ -18,7 +18,7 @@ on:
         type: string
         default: './'
 
-jobs:
+runs:
   scan:
     runs-on: windows-latest
     steps:
