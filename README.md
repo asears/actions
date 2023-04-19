@@ -2,6 +2,8 @@
 
 Github Actions reusable templates
 
+## General Pattern
+
 Templates require workflow_call event tracking.
 
 ```yaml
@@ -15,6 +17,20 @@ on:
       envPAT:
         required: true
 ```
+
+## lint-rust
+
+Lint rust code.
+
+https://github.com/asears/waltz/tree/feature/ciupdate/.github/workflows
+
+## scan-secrets
+
+Scan secrets with Trufflehog.
+
+Microsoft also provides a DevSecops action.
+
+https://github.com/microsoft/security-devops-action
 
 ## Resources
 
