@@ -31,7 +31,8 @@ jobs:
       - name: Run Microsoft Security DevOps
         uses: microsoft/security-devops-action@preview
         id: msdo
-      - name: Upload results to Security tab
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: ${{ steps.msdo.outputs.sarifFile }}
+      # TODO(AS): Getting unrecognized named-value on the env var
+      # - name: Upload results to Security tab
+      #  uses: github/codeql-action/upload-sarif@v2
+      #  with:
+      #    sarif_file: ${{ steps.msdo.outputs.sarifFile }}
