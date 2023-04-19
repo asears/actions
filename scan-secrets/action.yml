@@ -1,3 +1,4 @@
+# scan-secrets.yml
 # https://github.com/marketplace/actions/trufflehog-oss
 # - name: TruffleHog OSS
 #  uses: trufflesecurity/trufflehog@main
@@ -10,7 +11,26 @@
     # head: # optional
     # Extra args to be passed to the trufflehog cli.
     # extra_args: --debug --only-verified
-name: TruffleHog Secrets Scan
+name: 'TruffleHog Secrets Scan'
+description: 'Scan for secrets and credentials in a repo'
+
+on:
+  workflow_dispatch:
+    inputs:
+      project-directory:
+        description: 'The directory containing the project to scan'
+        required: true
+        type: string
+        default: './'
+        
+  workflow_call:
+    inputs:
+      project-directory:
+        description: 'The directory containing the project to scan'
+        required: true
+        type: string
+        default: './'
+
 on: [pull_request]
 jobs:
   TruffleHog:
@@ -23,7 +43,7 @@ jobs:
       - name: TruffleHog OSS
         uses: trufflesecurity/trufflehog@main
         with:
-          path: ./
+          path: {{ github.event.inputs.project-directory }}
           base: ${{ github.event.repository.default_branch }}
           head: HEAD
           extra_args: --debug --only-verified
